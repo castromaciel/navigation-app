@@ -1,12 +1,14 @@
-import { FC } from 'react'
+import 'react-native-gesture-handler'
+
+import { NavigationContainer } from '@react-navigation/native'
 import { SafeAreaView, StyleSheet, Text } from 'react-native'
 
-interface navigationAppProps {}
-
-const App: FC<navigationAppProps> = () => {
+const App = () => {
   return (
     <SafeAreaView>
-      <Text>App</Text>
+      <NavigationContainer>
+        <Text>App</Text>
+      </NavigationContainer>
     </SafeAreaView>
   )
 }
