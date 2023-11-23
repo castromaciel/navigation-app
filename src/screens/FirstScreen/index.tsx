@@ -2,9 +2,10 @@ import { StackScreenProps } from '@react-navigation/stack'
 import { FC } from 'react'
 import { Button, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { RouteStackParams } from '../../navigator/StackNavigator'
 import { globalTheme } from '../../theme/appTheme'
 
-interface FirstScreenProps extends StackScreenProps<any, any> {}
+interface FirstScreenProps extends StackScreenProps<RouteStackParams, 'First Screen'> {}
 
 const FirstScreen: FC<FirstScreenProps> = ({navigation}) => {
   return (
@@ -18,7 +19,10 @@ const FirstScreen: FC<FirstScreenProps> = ({navigation}) => {
       />
       <Button 
         title='Go to Person Screen '
-        onPress={() => navigation.navigate('Person Screen')}
+        onPress={() => navigation.navigate('Person Screen', {
+          id: 0,
+          name: 'No person selected'
+        })}
       />
 
       <Text>Navigate with args</Text>
