@@ -8,7 +8,10 @@ interface ThridScreenProps extends StackScreenProps<any, any> {}
 const ThridScreen: FC<ThridScreenProps> = ({ navigation }) => {
   return (
     <View style={globalTheme.appMargin}>
-      <Text>Thrid Screen</Text>
+      <Text style={globalTheme.title}>
+        Thrid Screen
+      </Text>
+
       <Button 
         title='Back'
         onPress={() => navigation.pop()}

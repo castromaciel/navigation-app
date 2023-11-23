@@ -8,7 +8,9 @@ interface FirstScreenProps extends StackScreenProps<any, any> {}
 const FirstScreen: FC<FirstScreenProps> = ({navigation}) => {
   return (
     <View style={globalTheme.appMargin}>
-      <Text>First Screen</Text>
+      <Text style={globalTheme.title}>
+        First Screen
+      </Text>
       <Button 
         title='Ir a pagina 2'
         onPress={() => navigation.navigate('Second Screen')}
