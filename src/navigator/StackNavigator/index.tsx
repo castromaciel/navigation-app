@@ -6,9 +6,9 @@ const Stack = createStackNavigator();
 const StackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="FirstScreen" component={FirstScreen} />
-      <Stack.Screen name="SecondScreen" component={SecondScreen} />
-      <Stack.Screen name="ThirdScreen" component={ThridScreen} />
+      <Stack.Screen name="First Screen" component={FirstScreen} />
+      <Stack.Screen name="Second Screen" component={SecondScreen} />
+      <Stack.Screen name="Third Screen" component={ThridScreen} />
     </Stack.Navigator>
   );
 }
