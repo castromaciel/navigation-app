@@ -1,4 +1,8 @@
-import { DrawerContentComponentProps, DrawerContentScrollView, createDrawerNavigator } from '@react-navigation/drawer';
+import {
+  DrawerContentComponentProps,
+  DrawerContentScrollView,
+  createDrawerNavigator
+} from '@react-navigation/drawer';
 import React, { FC } from 'react';
 import { Image, Text, View, useWindowDimensions } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -11,7 +15,7 @@ type Screens = {
   'SettingsScreen': undefined
 }
 
-const Drawer = createDrawerNavigator<Screens>();
+const Drawer = createDrawerNavigator<Screens>()
 
 const SidebarMenu = () => {
   const { width: WIDTH_SIZE } = useWindowDimensions()
@@ -32,7 +36,7 @@ const SidebarMenu = () => {
         component={StackNavigator}
       />
       <Drawer.Screen
-        name="Settings Screen"
+        name="SettingsScreen"
         component={SettingsScreen}
       />
     </Drawer.Navigator>
@@ -40,6 +44,7 @@ const SidebarMenu = () => {
 }
 
 export default SidebarMenu
+
 
 const MenuItem: FC<DrawerContentComponentProps> = ({
   navigation
@@ -67,7 +72,7 @@ const MenuItem: FC<DrawerContentComponentProps> = ({
 
         <TouchableOpacity
           style={globalTheme.menuItem}
-          onPress={() => navigation.navigate('Settings Screen')}
+          onPress={() => navigation.navigate('SettingsScreen')}
         >
           <Text style={globalTheme.menuLabel}>
             Settings
