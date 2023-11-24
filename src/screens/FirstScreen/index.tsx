@@ -1,13 +1,25 @@
-import { StackScreenProps } from '@react-navigation/stack'
-import { FC } from 'react'
+import { DrawerScreenProps } from '@react-navigation/drawer'
+import { FC, useEffect } from 'react'
 import { Button, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { RouteStackParams } from '../../navigator/StackNavigator'
 import { globalTheme } from '../../theme/appTheme'
 
-interface FirstScreenProps extends StackScreenProps<RouteStackParams, 'First Screen'> {}
+interface FirstScreenProps extends DrawerScreenProps<RouteStackParams, 'First Screen'> {}
 
-const FirstScreen: FC<FirstScreenProps> = ({navigation}) => {
+const FirstScreen: FC<FirstScreenProps> = ({ navigation }) => {
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <Button
+          title='Menu'
+          onPress={() => navigation.toggleDrawer()}
+        />
+      )
+    })
+  })
+
   return (
     <View style={globalTheme.appMargin}>
       <Text style={globalTheme.title}>

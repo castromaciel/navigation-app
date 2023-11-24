@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { StyleSheet } from 'react-native'
-import { StackNavigator } from './src/navigator'
+import { Sidebar } from './src/navigator'
 
 const App = () => {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      <Sidebar />
     </NavigationContainer>
   )
 }
