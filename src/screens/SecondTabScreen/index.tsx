@@ -1,9 +1,14 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 interface SecondTabScreenProps {}
 
 const SecondTabScreen: FC<SecondTabScreenProps> = () => {
+
+  useEffect(() => {
+    console.log('Second tab screen')
+  }, [])
+
   return (
     <View>
       <Text>SecondTabScreen</Text>
