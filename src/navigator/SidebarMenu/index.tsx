@@ -8,9 +8,10 @@ import { Image, Text, View, useWindowDimensions } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SettingsScreen } from '../../screens';
 import { globalTheme } from '../../theme/appTheme';
-import StackNavigator from '../StackNavigator';
+import Tabs from '../Tabs';
 
 type Screens = {
+  'Tabs': undefined,
   'StackNavigator': undefined,
   'SettingsScreen': undefined
 }
@@ -32,8 +33,8 @@ const SidebarMenu = () => {
       )}
     >
       <Drawer.Screen
-        name="StackNavigator"
-        component={StackNavigator}
+        name="Tabs"
+        component={Tabs}
       />
       <Drawer.Screen
         name="SettingsScreen"
@@ -63,7 +64,7 @@ const MenuItem: FC<DrawerContentComponentProps> = ({
       <View style={globalTheme.menuContainer}>
         <TouchableOpacity
           style={globalTheme.menuItem}
-          onPress={() => navigation.navigate('StackNavigator')}
+          onPress={() => navigation.navigate('Tabs')}
         >
           <Text style={globalTheme.menuLabel}>
             Navigation
