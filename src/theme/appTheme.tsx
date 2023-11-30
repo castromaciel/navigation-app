@@ -49,6 +49,10 @@ export const globalTheme = StyleSheet.create({
     paddingVertical: 4, 
   },
   menuLabel: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
     fontSize: 18,
   },
   title: {

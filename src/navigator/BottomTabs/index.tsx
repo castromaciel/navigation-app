@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { FirstTabScreen } from '../../screens';
 import { colors } from '../../theme/appTheme';
 import StackNavigator from '../StackNavigator';
@@ -35,17 +36,21 @@ const Tabs = () => {
 
           switch(route.name) {
             case 'Tab1':
-              iconName = 'T1';
+              iconName = 'bandage-outline';
               break;
             case 'TopTabs':
-              iconName = 'T2';
+              iconName = 'stopwatch-outline';
               break;
             case 'StackNavigator':
-              iconName = 'ST';
+              iconName = 'navigate-outline';
               break;
           }
 
-          return <Text style={{ color }}>{iconName}</Text>
+          return (
+            <Text style={{ color }}>
+              <Icon name={iconName} size={20}/>
+            </Text>
+          )
         }
       })}
     >
@@ -59,14 +64,14 @@ const Tabs = () => {
       <Tab.Screen
         name="TopTabs"
         options={{
-          title: 'Tab1',
+          title: 'Top Tabs',
         }}
         component={TopTabs}
       />
       <Tab.Screen
         name="StackNavigator"
         options={{
-          title: 'Tab1',
+          title: 'Navigator',
         }}
         component={StackNavigator}
       />

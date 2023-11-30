@@ -6,6 +6,7 @@ import {
 import React, { FC } from 'react';
 import { Image, Text, View, useWindowDimensions } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { SettingsScreen } from '../../screens';
 import { globalTheme } from '../../theme/appTheme';
 import Tabs from '../BottomTabs';
@@ -66,18 +67,30 @@ const MenuItem: FC<DrawerContentComponentProps> = ({
           style={globalTheme.menuItem}
           onPress={() => navigation.navigate('Tabs')}
         >
-          <Text style={globalTheme.menuLabel}>
-            Navigation
-          </Text>
+          <View style={globalTheme.menuLabel}>
+            <Text>
+              <Icon name='navigate-outline' size={20} />
+            </Text>
+
+            <Text>
+              Navigation
+            </Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={globalTheme.menuItem}
           onPress={() => navigation.navigate('SettingsScreen')}
         >
-          <Text style={globalTheme.menuLabel}>
-            Settings
-          </Text>
+          <View style={globalTheme.menuLabel}>
+            <Text>
+              <Icon name='settings-outline' size={20} />
+            </Text>
+
+            <Text>
+              Settings
+            </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>

@@ -2,6 +2,7 @@ import { DrawerScreenProps } from '@react-navigation/drawer'
 import { FC, useEffect } from 'react'
 import { Button, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { RouteStackParams } from '../../navigator/StackNavigator'
 import { colors, globalTheme } from '../../theme/appTheme'
 
@@ -12,10 +13,13 @@ const FirstScreen: FC<FirstScreenProps> = ({ navigation }) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button
-          title='Menu'
+        <TouchableOpacity
           onPress={() => navigation.toggleDrawer()}
-        />
+        >
+          <Text style={{ paddingLeft: 16 }}>
+            <Icon name='menu-outline' size={32} color={colors.primary} />
+          </Text>
+        </TouchableOpacity>
       )
     })
   })
