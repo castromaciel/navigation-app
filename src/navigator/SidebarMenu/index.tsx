@@ -8,7 +8,7 @@ import { Image, Text, View, useWindowDimensions } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SettingsScreen } from '../../screens';
 import { globalTheme } from '../../theme/appTheme';
-import Tabs from '../Tabs';
+import Tabs from '../BottomTabs';
 
 type Screens = {
   'Tabs': undefined,

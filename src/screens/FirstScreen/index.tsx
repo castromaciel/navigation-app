@@ -3,7 +3,7 @@ import { FC, useEffect } from 'react'
 import { Button, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { RouteStackParams } from '../../navigator/StackNavigator'
-import { globalTheme } from '../../theme/appTheme'
+import { colors, globalTheme } from '../../theme/appTheme'
 
 interface FirstScreenProps extends DrawerScreenProps<RouteStackParams, 'First Screen'> {}
 
@@ -47,7 +47,7 @@ const FirstScreen: FC<FirstScreenProps> = ({ navigation }) => {
         <TouchableOpacity
           style={{
             ...globalTheme.buttonLarge,
-            backgroundColor: '#5856D6'
+            backgroundColor: colors.primary
           }}
           onPress={() => navigation.navigate('Person Screen', {
             id: 1,
@@ -60,7 +60,7 @@ const FirstScreen: FC<FirstScreenProps> = ({ navigation }) => {
         <TouchableOpacity
           style={{
             ...globalTheme.buttonLarge,
-            backgroundColor: '#FF9427'
+            backgroundColor: colors.secondary
           }}
           onPress={() => navigation.navigate('Person Screen', {
             id: 2,

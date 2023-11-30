@@ -1,3 +1,6 @@
+export { default as AlbumsScreen } from './AlbumsScreen';
+export { default as ChatScreen } from './ChatScreen';
+export { default as ContactsScreen } from './ContactsScreen';
 export { default as FirstScreen } from './FirstScreen';
 export { default as FirstTabScreen } from './FirstTabScreen';
 export { default as PersonScreen } from './PersonScreen';

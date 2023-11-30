@@ -1,5 +1,6 @@
 import { FC, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { globalTheme } from '../../theme/appTheme'
 
 interface ThirdTabScreenProps {}
 
@@ -9,7 +10,7 @@ const ThirdTabScreen: FC<ThirdTabScreenProps> = () => {
   }, [])
 
   return (
-    <View>
+    <View style={globalTheme.appMargin}>
       <Text>ThirdTabScreen</Text>
     </View>
   )

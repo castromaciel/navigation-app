@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { FirstScreen, PersonScreen, SecondScreen, ThridScreen } from '../../screens';
+import { colors } from '../../theme/appTheme';
 
 export type RouteStackParams = {
   'First Screen': undefined
@@ -22,7 +23,7 @@ const StackNavigator = () => {
           shadowColor: 'transparent'
         },
         cardStyle: {
-          backgroundColor: 'white',
+          backgroundColor: colors.white,
         },
       }}
     >

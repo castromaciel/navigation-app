@@ -1,12 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
-import { FirstTabScreen, SecondTabScreen } from '../../screens';
+import { FirstTabScreen } from '../../screens';
 import { colors } from '../../theme/appTheme';
 import StackNavigator from '../StackNavigator';
+import TopTabs from '../TopTabs';
 
 type Screens = {
   'Tab1': undefined,
-  'Tab2': undefined
+  'TopTabs': undefined
   'StackNavigator': undefined,
 }
 
@@ -36,7 +37,7 @@ const Tabs = () => {
             case 'Tab1':
               iconName = 'T1';
               break;
-            case 'Tab2':
+            case 'TopTabs':
               iconName = 'T2';
               break;
             case 'StackNavigator':
@@ -56,11 +57,11 @@ const Tabs = () => {
         component={FirstTabScreen}
       />
       <Tab.Screen
-        name="Tab2"
+        name="TopTabs"
         options={{
           title: 'Tab1',
         }}
-        component={SecondTabScreen}
+        component={TopTabs}
       />
       <Tab.Screen
         name="StackNavigator"
