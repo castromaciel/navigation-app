@@ -1,12 +1,25 @@
 import { FC } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
+import { useAuthContext } from '../../context'
+import { globalTheme } from '../../theme/appTheme'
 
-interface AlbumsScreenProps {}
+interface AlbumsScreenProps { }
 
 const AlbumsScreen: FC<AlbumsScreenProps> = () => {
+  const { logout, authState } = useAuthContext()
+
   return (
-    <View>
-      <Text>AlbumsScreen</Text>
+    <View style={globalTheme.appMargin}>
+      <Text style={globalTheme.title}>Albums Screen</Text>
+
+      {
+        authState.isLogged && (
+          <Button
+            title='Logout'
+            onPress={logout}
+          />
+        )
+      }
     </View>
   )
 }

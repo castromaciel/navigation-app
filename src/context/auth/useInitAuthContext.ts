@@ -16,11 +16,16 @@ const useInitAuthContext = () => {
   const changeFavouriteIcon = (favouriteIcon: string) => {
     dispatch({ type: 'changeFavouriteIcon', payload: favouriteIcon})
   }
+
+  const logout = () => {
+    dispatch({ type: 'logout', payload: authInitalState })
+  }
   
   return {
     authState,
+    changeFavouriteIcon,
+    logout,
     signIn,
-    changeFavouriteIcon
   }
 }
 
