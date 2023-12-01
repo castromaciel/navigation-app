@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { FC, ReactNode } from 'react'
 import { StyleSheet } from 'react-native'
-import AuthProvider from './src/context/AuthContext'
+import AuthProvider from './src/context/auth/AuthContext'
 import SidebarMenu from './src/navigator/SidebarMenu'
 
 interface AppStateProps {
