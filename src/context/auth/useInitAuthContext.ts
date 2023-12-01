@@ -12,10 +12,15 @@ const useInitAuthContext = () => {
   const [authState, dispatch] = useReducer(authReducer, authInitalState)
 
   const signIn = () => dispatch({ type: 'signIn' })
+
+  const changeFavouriteIcon = (favouriteIcon: string) => {
+    dispatch({ type: 'changeFavouriteIcon', payload: favouriteIcon})
+  }
   
   return {
     authState,
-    signIn
+    signIn,
+    changeFavouriteIcon
   }
 }
 

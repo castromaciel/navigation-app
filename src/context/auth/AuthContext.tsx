@@ -11,6 +11,7 @@ export interface AuthState {
 // Definir las acciones
 export interface AuthActions {
   signIn: () => void
+  changeFavouriteIcon: (favouriteIcon: string) => void
 }
 
 interface AuthContextProps extends AuthActions {
@@ -24,12 +25,13 @@ interface AuthProviderProps {
 }
 
 const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
-  const { authState, signIn } = useInitAuthContext()
+  const { authState, signIn, changeFavouriteIcon } = useInitAuthContext()
 
   return (
     <AuthContext.Provider value={{
       authState,
-      signIn
+      signIn,
+      changeFavouriteIcon
     }}>
       {children}
     </AuthContext.Provider>
