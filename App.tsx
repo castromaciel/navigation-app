@@ -1,11 +1,29 @@
 import { NavigationContainer } from '@react-navigation/native'
+import { FC, ReactNode } from 'react'
 import { StyleSheet } from 'react-native'
+import AuthProvider from './src/context/AuthContext'
 import SidebarMenu from './src/navigator/SidebarMenu'
+
+interface AppStateProps {
+  children: ReactNode | ReactNode[]
+}
+
+const AppState: FC<AppStateProps> = ({
+  children
+}) => {
+  return (
+    <AuthProvider>
+      {children}
+    </AuthProvider>
+  )
+}
 
 const App = () => {
   return (
     <NavigationContainer>
-      <SidebarMenu />
+      <AppState>
+        <SidebarMenu />
+      </AppState>
     </NavigationContainer>
   )
 }
